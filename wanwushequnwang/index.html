@@ -1,0 +1,1110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>玩物社区女王-潮玩收藏与藏品交流</title>
+<meta name="description" content="玩物社区女王是潮玩、盲盒、手办与古玩器物的收藏交流社区，提供藏品科普、开箱体验、版本鉴别、流通行情与藏友互动话题，帮新手看懂工艺与保值逻辑，找到同好与靠谱的交流圈子。">
+<meta name="keywords" content="玩物社区女王">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232b1a3a'/%3E%3Cpath d='M32 10l5.6 11.4L50 23l-9 8.8 2.1 12.4L32 38.4 20.9 44.2 23 31.8 14 23l12.4-1.6z' fill='%23f2b544'/%3E%3Ccircle cx='32' cy='30' r='4.5' fill='%232b1a3a'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#241a17;
+  --ink-soft:#4d3f3a;
+  --muted:#7a6a63;
+  --paper:#faf5ee;
+  --paper-2:#f3e9dc;
+  --card:#fffdf9;
+  --line:#e2d5c4;
+  --brand:#5b2a5e;
+  --brand-deep:#3d1a40;
+  --accent:#c2402f;
+  --gold:#b8860b;
+  --gold-soft:#f2dfae;
+  --radius:14px;
+  --radius-sm:8px;
+  --shadow:0 2px 10px rgba(61,26,64,.07);
+  --shadow-lift:0 8px 24px rgba(61,26,64,.12);
+  --gap:22px;
+  --sticky-h:104px;
+  --font:"Noto Serif SC","Songti SC","STSong",Georgia,"Microsoft YaHei",serif;
+  --font-sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--sticky-h) + 12px)}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--font-sans);
+  font-size:16px;
+  line-height:1.78;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:var(--brand);text-decoration:none}
+a:hover{color:var(--accent)}
+h1,h2,h3,h4{font-family:var(--font);line-height:1.35;margin:0 0 .5em}
+h2{font-size:1.55rem;letter-spacing:.02em}
+h3{font-size:1.14rem}
+p{margin:0 0 1em}
+ul,ol{margin:0 0 1em;padding-left:1.2em}
+li{margin:.25em 0}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--brand);color:#fff;padding:10px 16px;z-index:99;border-radius:0 0 8px 0}
+.skip:focus{left:0}
+
+/* ---------- sticky announcement + header ---------- */
+.sticky-top{position:sticky;top:0;z-index:60}
+.notice{
+  background:linear-gradient(90deg,var(--brand-deep),var(--brand) 60%,#7a3a63);
+  color:#f6e8d8;font-size:.84rem;letter-spacing:.01em;
+}
+.notice .wrap{display:flex;align-items:center;gap:12px;padding:7px 20px;flex-wrap:wrap}
+.notice .tag{
+  background:var(--gold-soft);color:#4a2c0d;font-weight:700;font-size:.74rem;
+  padding:1px 8px;border-radius:20px;white-space:nowrap;letter-spacing:.08em;
+}
+.notice b{color:#ffd98a;font-weight:600}
+.notice a{color:#ffe6b8;text-decoration:underline;text-underline-offset:3px}
+
+.site-head{
+  background:rgba(250,245,238,.96);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+  box-shadow:var(--shadow);
+}
+.head-inner{display:flex;align-items:center;gap:18px;padding:12px 20px;max-width:1180px;margin:0 auto;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;flex:none}
+.brand-mark{width:42px;height:42px;flex:none}
+.brand-text{display:flex;flex-direction:column;line-height:1.1}
+.brand-name{font-family:var(--font);font-size:1.2rem;font-weight:700;color:var(--brand-deep);letter-spacing:.06em}
+.brand-sub{font-size:.68rem;color:var(--muted);letter-spacing:.18em;text-transform:uppercase}
+.main-nav{display:flex;gap:4px;flex-wrap:wrap;flex:1 1 420px}
+.main-nav a{
+  font-size:.9rem;color:var(--ink-soft);padding:6px 11px;border-radius:20px;
+  transition:background .18s,color .18s;
+}
+.main-nav a:hover,.main-nav a:focus-visible{background:var(--paper-2);color:var(--brand-deep)}
+.head-tools{display:flex;align-items:center;gap:8px;flex:none;margin-left:auto}
+.search{position:relative;display:flex;align-items:center}
+.search input{
+  font-family:var(--font-sans);font-size:.85rem;color:var(--ink);
+  border:1px solid var(--line);background:var(--card);
+  border-radius:22px;padding:8px 14px;width:168px;outline:none;
+  transition:border-color .18s,box-shadow .18s;
+}
+.search input:focus{border-color:var(--brand);box-shadow:0 0 0 3px rgba(91,42,94,.12)}
+.search-btn{
+  border:0;background:var(--brand);color:#fff;border-radius:50%;
+  width:32px;height:32px;margin-left:-38px;cursor:pointer;font-size:.8rem;
+  display:flex;align-items:center;justify-content:center;
+}
+.search-btn:hover{background:var(--accent)}
+.search-msg{font-size:.78rem;color:var(--accent);position:absolute;top:100%;left:6px;margin-top:4px;white-space:nowrap}
+.menu-toggle{
+  display:none;border:1px solid var(--line);background:var(--card);color:var(--brand-deep);
+  border-radius:10px;padding:7px 12px;font-size:.86rem;cursor:pointer;font-family:var(--font-sans);
+}
+.menu-toggle:focus-visible,.main-nav a:focus-visible,.search-btn:focus-visible{outline:3px solid rgba(194,64,47,.45);outline-offset:2px}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;background:linear-gradient(160deg,#2b1a3a 0%,#4a2150 55%,#6c2f52 100%);color:#f8eee2}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;padding:64px 20px 68px}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;font-size:.78rem;letter-spacing:.12em;
+  color:#ffe0a3;border:1px solid rgba(255,224,163,.4);padding:4px 12px;border-radius:20px;margin-bottom:18px;
+}
+.hero h1{font-size:2.6rem;letter-spacing:.06em;color:#fff;margin-bottom:14px}
+.hero h1 span{color:#ffcf6b}
+.hero-lead{font-size:1.02rem;color:#e8d8cc;max-width:34em;margin-bottom:22px}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.btn{
+  display:inline-block;font-size:.92rem;padding:10px 22px;border-radius:24px;
+  border:1px solid transparent;transition:transform .18s,box-shadow .18s,background .18s;
+  font-family:var(--font-sans);
+}
+.btn-primary{background:#f2b544;color:#3d1a40;font-weight:700;box-shadow:0 6px 18px rgba(242,181,68,.3)}
+.btn-primary:hover{background:#ffcb5e;color:#3d1a40;transform:translateY(-2px)}
+.btn-ghost{border-color:rgba(255,255,255,.4);color:#f8eee2}
+.btn-ghost:hover{background:rgba(255,255,255,.1);color:#fff;transform:translateY(-2px)}
+.hero-stats{display:flex;gap:30px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.18);padding-top:18px}
+.hero-stats b{display:block;font-family:var(--font);font-size:1.42rem;color:#ffcf6b;line-height:1.2}
+.hero-stats span{font-size:.78rem;color:#cdb9ad}
+.hero-art{position:relative;display:flex;justify-content:center}
+.hero-art svg{width:100%;max-width:360px;filter:drop-shadow(0 14px 30px rgba(0,0,0,.35))}
+
+/* ---------- layout ---------- */
+.layout{display:grid;grid-template-columns:220px minmax(0,1fr) 280px;gap:var(--gap);padding:38px 0 20px;align-items:start}
+.side-left{position:sticky;top:calc(var(--sticky-h) + 14px)}
+.side-nav{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 12px;box-shadow:var(--shadow)}
+.side-nav h3{font-size:.78rem;letter-spacing:.16em;color:var(--muted);margin:4px 8px 10px;font-family:var(--font-sans);font-weight:600}
+.side-nav a{
+  display:block;font-size:.87rem;color:var(--ink-soft);padding:7px 10px;border-radius:8px;
+  border-left:3px solid transparent;transition:.16s;
+}
+.side-nav a:hover{background:var(--paper-2);color:var(--brand-deep)}
+.side-nav a.active{background:rgba(91,42,94,.08);border-left-color:var(--brand);color:var(--brand-deep);font-weight:600}
+.main-col{min-width:0}
+.side-right{display:flex;flex-direction:column;gap:var(--gap)}
+
+/* ---------- sections ---------- */
+.section{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px 26px 24px;box-shadow:var(--shadow);margin-bottom:var(--gap)}
+.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.section-head h2{margin:0}
+.section-head .more{font-size:.84rem;white-space:nowrap}
+.eyebrow{font-size:.74rem;letter-spacing:.2em;color:var(--accent);font-weight:700;text-transform:uppercase;display:block;margin-bottom:6px}
+.lead-txt{font-size:.95rem;color:var(--ink-soft);margin-bottom:18px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.card{
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-sm);
+  overflow:hidden;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s;
+}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lift)}
+.card-body{padding:14px 15px 16px}
+.card h3{font-size:1rem;margin-bottom:6px}
+.card p{font-size:.86rem;color:var(--muted);margin:0}
+.card .meta{font-size:.76rem;color:var(--brand);margin-top:8px;font-weight:600;letter-spacing:.02em}
+.thumb{width:100%;height:150px;object-fit:cover;background:var(--paper-2)}
+.tag-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.tag{
+  font-size:.8rem;background:var(--paper-2);border:1px solid var(--line);color:var(--ink-soft);
+  padding:5px 12px;border-radius:20px;transition:.16s;
+}
+.tag:hover{background:var(--brand);color:#fff;border-color:var(--brand)}
+.tag.gold{background:#fbf1d8;border-color:#e6d09a;color:#7a5a10}
+
+/* compact list */
+.list{list-style:none;padding:0;margin:0}
+.list li{display:flex;gap:14px;padding:12px 0;border-bottom:1px dashed var(--line);align-items:flex-start}
+.list li:last-child{border-bottom:0}
+.list .date{flex:none;width:72px;font-size:.78rem;color:var(--muted);padding-top:2px}
+.list .li-body{min-width:0}
+.list .li-body b{font-family:var(--font);font-size:.98rem;font-weight:600;color:var(--ink)}
+.list .li-body p{font-size:.85rem;color:var(--muted);margin:3px 0 0}
+.list .chip{font-size:.72rem;background:rgba(91,42,94,.09);color:var(--brand-deep);border-radius:5px;padding:1px 7px;margin-left:6px;white-space:nowrap}
+
+/* channel index */
+.channels{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.channels a{
+  display:flex;flex-direction:column;gap:2px;padding:12px 13px;border-radius:10px;
+  background:var(--paper);border:1px solid var(--line);transition:.16s;
+}
+.channels a:hover{background:var(--brand);border-color:var(--brand);color:#fff}
+.channels a:hover .cnt{color:#ffd98a}
+.channels .cn{font-size:.92rem;font-weight:600;color:inherit}
+.channels .cnt{font-size:.74rem;color:var(--muted);font-family:var(--font-sans)}
+
+/* deep analysis */
+.analysis{border-left:4px solid var(--brand)}
+.analysis h3{margin-top:26px;padding-top:6px;color:var(--brand-deep)}
+.analysis h3:first-of-type{margin-top:8px}
+.analysis p{font-size:.95rem}
+.quote-card{
+  background:linear-gradient(135deg,#f6ecfa,#fbf3e6);border:1px solid #e7d6ec;
+  border-radius:var(--radius-sm);padding:16px 18px;margin:18px 0;font-family:var(--font);
+  font-size:1rem;color:var(--brand-deep);position:relative;
+}
+.quote-card::before{content:"“";font-size:2.4rem;color:#c9a7cf;position:absolute;top:-6px;left:10px;font-family:Georgia,serif}
+.quote-card p{margin:0;padding-left:24px}
+.quote-card cite{display:block;font-size:.8rem;color:var(--muted);font-style:normal;margin-top:8px;padding-left:24px;font-family:var(--font-sans)}
+.check-table{width:100%;border-collapse:collapse;font-size:.85rem;margin:14px 0 18px}
+.check-table caption{text-align:left;font-size:.78rem;color:var(--muted);padding-bottom:6px}
+.check-table th,.check-table td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.check-table th{background:var(--paper-2);font-weight:600;color:var(--brand-deep);white-space:nowrap}
+.check-table td.ok{color:#1f6b3a}
+.check-table td.no{color:#a83226}
+
+/* guide steps */
+.steps{counter-reset:st;list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.steps li{
+  counter-increment:st;position:relative;padding:14px 16px 14px 58px;
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-sm);
+}
+.steps li::before{
+  content:counter(st,decimal-leading-zero);position:absolute;left:14px;top:14px;
+  font-family:var(--font);font-size:1.05rem;font-weight:700;color:#fff;background:var(--brand);
+  width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.86rem;
+}
+.steps b{font-family:var(--font);font-size:.98rem}
+.steps p{font-size:.85rem;color:var(--muted);margin:3px 0 0}
+
+/* compare panel */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:var(--radius-sm);overflow:hidden}
+.compare>div{padding:16px 18px}
+.compare .col-a{background:#f4f7f2;border-right:1px solid var(--line)}
+.compare .col-b{background:#fdf4ef}
+.compare h4{font-size:.92rem;margin-bottom:8px}
+.compare ul{font-size:.85rem;padding-left:1.1em;margin:0}
+.compare li{margin:.3em 0;color:var(--ink-soft)}
+
+/* FAQ */
+details.faq{border:1px solid var(--line);border-radius:10px;background:var(--paper);margin-bottom:10px;overflow:hidden}
+details.faq summary{
+  cursor:pointer;padding:13px 44px 13px 16px;font-size:.94rem;font-weight:600;
+  font-family:var(--font);color:var(--brand-deep);list-style:none;position:relative;
+}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{
+  content:"+";position:absolute;right:14px;top:50%;transform:translateY(-50%);
+  font-size:1.2rem;color:var(--brand);transition:transform .2s;
+}
+details.faq[open] summary::after{content:"−"}
+details.faq summary:focus-visible{outline:3px solid rgba(194,64,47,.45);outline-offset:-3px}
+details.faq .ans{padding:0 16px 15px;font-size:.9rem;color:var(--ink-soft);border-top:1px dashed var(--line);padding-top:12px;margin-top:0}
+details.faq .ans p:last-child{margin-bottom:0}
+
+/* comments */
+.comments{display:grid;gap:12px}
+.comment{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px 15px}
+.comment .who{display:flex;align-items:center;gap:8px;font-size:.82rem;margin-bottom:5px}
+.comment .avatar{
+  width:26px;height:26px;border-radius:50%;background:var(--brand);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:.76rem;font-family:var(--font);flex:none;
+}
+.comment .who b{font-weight:600;color:var(--ink)}
+.comment .who time{color:var(--muted);font-size:.75rem;margin-left:auto}
+.comment p{font-size:.88rem;margin:0;color:var(--ink-soft)}
+.comment .ref{color:var(--brand);font-size:.8rem;border-bottom:1px dotted var(--brand)}
+
+/* timeline */
+.timeline{list-style:none;margin:0;padding:0 0 0 22px;border-left:2px solid var(--line)}
+.timeline li{position:relative;padding:0 0 18px 8px}
+.timeline li:last-child{padding-bottom:0}
+.timeline li::before{content:"";position:absolute;left:-29px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--gold);border:2px solid var(--card);box-shadow:0 0 0 1px var(--gold)}
+.timeline time{font-size:.78rem;color:var(--accent);font-weight:600;display:block}
+.timeline b{font-family:var(--font);font-size:.95rem;display:block;margin:1px 0 2px}
+.timeline p{font-size:.85rem;color:var(--muted);margin:0}
+
+/* sidebar blocks */
+.aside-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 18px 16px;box-shadow:var(--shadow)}
+.aside-card h3{font-size:.95rem;margin-bottom:12px;padding-bottom:9px;border-bottom:1px solid var(--line)}
+.rank{list-style:none;padding:0;margin:0;counter-reset:rk}
+.rank li{counter-increment:rk;display:flex;gap:10px;align-items:baseline;padding:7px 0;font-size:.87rem}
+.rank li::before{
+  content:counter(rk);font-family:var(--font);font-weight:700;font-size:.8rem;
+  color:var(--muted);width:20px;flex:none;text-align:center;
+}
+.rank li:nth-child(1)::before{color:var(--accent);font-size:.95rem}
+.rank li:nth-child(2)::before{color:var(--gold)}
+.rank li:nth-child(3)::before{color:#a06a2c}
+.rank a{color:var(--ink);font-family:var(--font)}
+.rank a:hover{color:var(--accent)}
+.rank .n{margin-left:auto;font-size:.75rem;color:var(--muted);white-space:nowrap}
+.mini-note{font-size:.78rem;color:var(--muted);margin:10px 0 0;border-top:1px dashed var(--line);padding-top:10px}
+.aside-tags{display:flex;flex-wrap:wrap;gap:7px}
+.aside-tags a{font-size:.79rem;padding:4px 11px;border-radius:16px;background:var(--paper-2);border:1px solid var(--line);color:var(--ink-soft)}
+.aside-tags a:hover{background:var(--brand);color:#fff;border-color:var(--brand)}
+
+/* footer */
+.site-foot{background:#241a26;color:#cdbfc6;margin-top:44px;padding:46px 0 26px;font-size:.86rem}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px}
+.foot-brand{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.foot-brand .brand-name{color:#f2dfae;font-size:1.12rem}
+.foot-brand .brand-sub{color:#8d7c84}
+.foot-desc{color:#a4939b;font-size:.84rem;max-width:26em;margin-bottom:10px}
+.foot-update{font-size:.76rem;color:#8d7c84}
+.foot-update b{color:#c9a7cf;font-weight:600}
+.foot-col h4{font-size:.82rem;letter-spacing:.12em;color:#f2dfae;font-family:var(--font-sans);margin-bottom:10px}
+.foot-col ul{list-style:none;padding:0;margin:0}
+.foot-col li{margin:.35em 0}
+.foot-col a{color:#b6a5ac;font-size:.84rem}
+.foot-col a:hover{color:#ffd98a}
+.foot-bottom{border-top:1px solid #3a2c3d;margin-top:30px;padding-top:16px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:.76rem;color:#8d7c84}
+.foot-bottom span{max-width:48em}
+
+/* back to top */
+#toTop{
+  position:fixed;right:18px;bottom:22px;z-index:50;width:44px;height:44px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.25);background:var(--brand);color:#fff;font-size:1rem;
+  cursor:pointer;box-shadow:0 6px 18px rgba(61,26,64,.35);opacity:0;visibility:hidden;
+  transform:translateY(10px);transition:.25s;font-family:var(--font-sans);
+}
+#toTop.show{opacity:1;visibility:visible;transform:translateY(0)}
+#toTop:hover{background:var(--accent)}
+#toTop:focus-visible{outline:3px solid rgba(242,181,68,.6);outline-offset:2px}
+mark{background:#ffe9a8;color:inherit;padding:0 2px;border-radius:3px}
+
+/* ---------- responsive ---------- */
+@media (max-width:1020px){
+  .layout{grid-template-columns:minmax(0,1fr) 280px}
+  .side-left{position:static;grid-column:1/-1;order:-1}
+  .side-nav{display:flex;flex-wrap:wrap;gap:4px;padding:10px}
+  .side-nav h3{display:none}
+  .side-nav a{border-left:0;padding:6px 12px;border-radius:20px}
+  .side-nav a.active{background:var(--brand);color:#fff}
+  .main-col{grid-column:1;grid-row:2}
+  .side-right{grid-column:2;grid-row:2}
+  .hero .wrap{grid-template-columns:1fr;padding:46px 20px 48px;gap:26px}
+  .hero-art svg{max-width:260px}
+  .hero h1{font-size:2.2rem}
+  .grid-3{grid-template-columns:repeat(2,1fr)}
+  .channels{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:760px){
+  :root{--sticky-h:132px;--gap:16px}
+  .head-inner{padding:10px 16px;gap:10px}
+  .menu-toggle{display:inline-block;margin-left:auto}
+  .main-nav{display:none;flex:1 1 100%;flex-direction:column;gap:2px;padding-top:6px}
+  .main-nav.open{display:flex}
+  .main-nav a{padding:9px 12px;border-radius:8px}
+  .head-tools{order:3;flex:1 1 100%;margin-left:0}
+  .search{width:100%}
+  .search input{width:100%}
+  .layout{grid-template-columns:minmax(0,1fr);padding-top:24px}
+  .side-right{grid-column:1;grid-row:auto}
+  .grid-3,.grid-2{grid-template-columns:1fr}
+  .channels{grid-template-columns:repeat(2,1fr)}
+  .compare{grid-template-columns:1fr}
+  .compare .col-a{border-right:0;border-bottom:1px solid var(--line)}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:22px}
+  .hero h1{font-size:1.8rem}
+  .hero-stats{gap:18px}
+  .section{padding:20px 16px}
+  .list li{flex-direction:column;gap:2px}
+  .list .date{width:auto}
+  #toTop{right:12px;bottom:14px;width:40px;height:40px}
+}
+@media (max-width:400px){
+  .foot-grid{grid-template-columns:1fr}
+  .channels{grid-template-columns:1fr 1fr}
+  .brand-sub{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+  .card:hover,.btn:hover{transform:none}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+<a class="skip" href="#main-content">跳到主要内容</a>
+
+<div class="sticky-top">
+  <div class="notice" id="notice">
+    <div class="wrap">
+      <span class="tag">公告</span>
+      <span><b>玩物社区女王</b> 11 月 7 日更新「2026 秋冬盲盒隐藏款概率表」，同步上架 <a href="/#channel-index">陶俑修复直播回放</a></span>
+      <span>· 本周新增 3 场线下换藏局（杭州、成都、沈阳）</span>
+    </div>
+  </div>
+  <header class="site-head">
+    <div class="head-inner">
+      <a class="brand" href="/#top" aria-label="玩物社区女王 首页">
+        <svg class="brand-mark" viewBox="0 0 64 64" role="img" aria-label="金冠与宝石组成的社区标志">
+          <rect width="64" height="64" rx="14" fill="#3d1a40"/>
+          <path d="M12 40l6-20 8 10 6-16 6 16 8-10 6 20z" fill="#f2b544"/>
+          <rect x="12" y="41" width="40" height="7" rx="3" fill="#c2402f"/>
+          <circle cx="32" cy="28" r="3.4" fill="#fff" opacity=".9"/>
+          <circle cx="20" cy="35" r="2" fill="#fff" opacity=".55"/>
+          <circle cx="44" cy="35" r="2" fill="#fff" opacity=".55"/>
+        </svg>
+        <span class="brand-text">
+          <span class="brand-name">玩物社区女王</span>
+          <span class="brand-sub">Collector's Court</span>
+        </span>
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="主题导航">
+        <a href="/#overview">领域概览</a>
+        <a href="/#featured">精选推荐</a>
+        <a href="/#updates">最新更新</a>
+        <a href="/#channel-index">分类入口</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#guide">体验指南</a>
+        <a href="/#comments">藏友评论</a>
+        <a href="/#news">相关资讯</a>
+      </nav>
+      <div class="head-tools">
+        <div class="search">
+          <input type="search" id="searchInput" placeholder="搜索盲盒、手办、鉴别…" aria-label="站内搜索">
+          <button class="search-btn" id="searchBtn" aria-label="搜索">🔍</button>
+          <span class="search-msg" id="searchMsg" role="status" aria-live="polite"></span>
+        </div>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav">菜单</button>
+    </div>
+  </header>
+</div>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-txt">
+      <span class="hero-badge">潮玩 · 手办 · 器物 · 收藏</span>
+      <h1>玩物社区女王</h1>
+      <p class="hero-lead">一个把盲盒概率、手办工艺和古玩器物摊开来讲的藏友聚集地。开箱前先看版本号，入手前先查流通记录，出手前先翻同批次成交价——收藏这件事，值得认真对待。</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="/#deep">读深度解析</a>
+        <a class="btn btn-ghost" href="/#guide">看新手指南</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>11,482</b><span>在册藏品条目</span></div>
+        <div><b>326</b><span>本周鉴定答疑</span></div>
+        <div><b>47</b><span>城市换藏局</span></div>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 360 340" role="presentation">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#f2b544"/><stop offset="1" stop-color="#c2402f"/>
+          </linearGradient>
+          <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#f6ecfa"/><stop offset="1" stop-color="#d9b8e0"/>
+          </linearGradient>
+        </defs>
+        <ellipse cx="180" cy="308" rx="120" ry="16" fill="#1c1020" opacity=".5"/>
+        <rect x="70" y="150" width="220" height="140" rx="16" fill="url(#g1)"/>
+        <rect x="84" y="164" width="192" height="112" rx="10" fill="#2b1a3a"/>
+        <rect x="100" y="182" width="160" height="14" rx="7" fill="#f2b544" opacity=".85"/>
+        <rect x="100" y="206" width="118" height="10" rx="5" fill="#f6ecfa" opacity=".55"/>
+        <rect x="100" y="224" width="140" height="10" rx="5" fill="#f6ecfa" opacity=".35"/>
+        <rect x="100" y="242" width="86" height="10" rx="5" fill="#f6ecfa" opacity=".25"/>
+        <circle cx="272" cy="248" r="16" fill="#f2b544"/>
+        <circle cx="272" cy="248" r="7" fill="#2b1a3a"/>
+        <g transform="translate(180 92)">
+          <path d="M-46 34l10-36 16 18 20-30 20 30 16-18 10 36z" fill="url(#g2)"/>
+          <rect x="-46" y="34" width="92" height="14" rx="6" fill="#c2402f"/>
+          <circle cx="0" cy="4" r="7" fill="#fff" opacity=".85"/>
+          <circle cx="-26" cy="18" r="4.5" fill="#fff" opacity=".6"/>
+          <circle cx="26" cy="18" r="4.5" fill="#fff" opacity=".6"/>
+        </g>
+        <g stroke="#f6ecfa" stroke-width="2" opacity=".5">
+          <line x1="42" y1="70" x2="62" y2="70"/><line x1="298" y1="120" x2="318" y2="120"/>
+          <line x1="52" y1="200" x2="66" y2="200"/><line x1="296" y1="60" x2="310" y2="60"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="layout">
+    <!-- LEFT NAV -->
+    <aside class="side-left">
+      <nav class="side-nav" id="sideNav" aria-label="栏目快速导航">
+        <h3>栏目导航</h3>
+        <a href="/#overview">领域概览</a>
+        <a href="/#featured">精选内容推荐</a>
+        <a href="/#updates">最新更新</a>
+        <a href="/#channel-index">分类入口</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#guide">体验指南</a>
+        <a href="/#faq">常见问题</a>
+        <a href="/#comments">藏友评论</a>
+        <a href="/#news">相关资讯</a>
+        <a href="/#recommend">相关推荐</a>
+        <a href="/#timeline">更新记录</a>
+      </nav>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main-col" id="main-content">
+
+      <!-- 1 领域概览 -->
+      <section class="section" id="overview">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Overview</span>
+            <h2>领域概览：收藏圈现在在玩什么</h2>
+          </div>
+          <a class="more" href="/#channel-index">全部 12 个频道 →</a>
+        </div>
+        <p class="lead-txt">收藏大致分三条线：量产的盲盒与手办、有版权的雕像与设计师玩具、以及年代较久的器物杂项。三条线的判断标准并不一样，混着看最容易吃亏。</p>
+        <div class="grid-3">
+          <div class="card">
+            <img class="thumb" src="https://picsum.photos/seed/blindbox2026a/480/320" width="480" height="320" loading="lazy" alt="盲盒展示柜里按系列排列的盒体与隐藏款标签" style="object-fit:cover">
+            <div class="card-body">
+              <h3>盲盒与手办</h3>
+              <p>看批次码、看端盒重量、看隐藏款概率公示。2026 年秋季起多家厂商在盒底加印生产周编号，抄号比价有了依据。</p>
+              <div class="meta">典型条目：Molly 星夜系列 · SKULLPANDA 回声</div>
+            </div>
+          </div>
+          <div class="card">
+            <img class="thumb" src="https://picsum.photos/seed/statue2026b/480/320" width="480" height="320" loading="lazy" alt="树脂雕像在射灯下的展台与底座编号铭牌" style="object-fit:cover">
+            <div class="card-body">
+              <h3>雕像与设计师玩具</h3>
+              <p>限量编号、雕刻师署名、涂装工厂三项可查。二手成交价常与发行价差 2 到 5 倍，流通量比热度更能说明问题。</p>
+              <div class="meta">典型条目：限定树脂雕像 · 艺术家联名软胶</div>
+            </div>
+          </div>
+          <div class="card">
+            <img class="thumb" src="https://picsum.photos/seed/antique2026c/480/320" width="480" height="320" loading="lazy" alt="木质托盘里的陶俑残件与放大镜" style="object-fit:cover">
+            <div class="card-body">
+              <h3>器物与杂项</h3>
+              <p>陶俑、老银饰、旧唱机。真伪靠胎土、锈色、工艺痕迹三处对照，照片只能初筛，实物上手才算数。</p>
+              <div class="meta">典型条目：汉灰陶俑残件 · 民国银锁片</div>
+            </div>
+          </div>
+        </div>
+        <p style="margin-top:16px;font-size:.88rem;color:var(--muted)">懂行的人通常只深耕一条线，跨线判断往往在工艺细节上翻车。新入场建议先定一条主线，把该线的 20 个代表条目摸清再扩展。</p>
+      </section>
+
+      <!-- 2 精选推荐 -->
+      <section class="section" id="featured">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Featured</span>
+            <h2>精选内容推荐</h2>
+          </div>
+          <a class="more" href="/#recommend">更多推荐 →</a>
+        </div>
+        <div class="grid-2">
+          <a class="card" href="/#deep">
+            <img class="thumb" src="https://picsum.photos/seed/hiddenrate77/480/320" width="480" height="320" loading="lazy" alt="盲盒隐藏款概率公示卡与拆盒工具" style="object-fit:cover">
+            <div class="card-body">
+              <h3>隐藏款概率公示到底能不能信</h3>
+              <p>把 12 个系列的公示概率与实际社群拆盒记录摆在一起，差距最大的一档出现在 2026 年 9 月。</p>
+              <div class="meta">深度解析 · 约 9 分钟</div>
+            </div>
+          </a>
+          <a class="card" href="/#guide">
+            <img class="thumb" src="https://picsum.photos/seed/firstbuy88/480/320" width="480" height="320" loading="lazy" alt="新手在展柜前对比两盒盲盒的重量" style="object-fit:cover">
+            <div class="card-body">
+              <h3>新手第一次线下换藏怎么不吃亏</h3>
+              <p>从带什么、问什么到当场验货的四个动作，附一份可以直接照着念的询问清单。</p>
+              <div class="meta">体验指南 · 约 6 分钟</div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- 3 最新更新 -->
+      <section class="section" id="updates">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Updated</span>
+            <h2>最新更新</h2>
+          </div>
+          <span class="more" style="color:var(--muted);font-size:.82rem">截至 2026-11-08</span>
+        </div>
+        <ul class="list">
+          <li>
+            <span class="date">今天 09:20</span>
+            <div class="li-body">
+              <b>2026 秋冬盲盒隐藏款概率表补入第 7 版</b> <span class="chip">概率表</span>
+              <p>新增 SKULLPANDA 回声系列、DIMOO 潮汐系列两组数据，来源为厂商官网公示页截图与 214 条社群拆盒记录。</p>
+            </div>
+          </li>
+          <li>
+            <span class="date">昨天 16:45</span>
+            <div class="li-body">
+              <b>陶俑修复直播回放上线</b> <span class="chip">器物</span>
+              <p>西安一位从业 11 年的修复师演示灰陶俑粘接，重点讲了环氧胶与可逆胶的区别，回放 47 分钟。</p>
+            </div>
+          </li>
+          <li>
+            <span class="date">11 月 6 日</span>
+            <div class="li-body">
+              <b>杭州换藏局场地确定为上城区一间共享展厅</b> <span class="chip">线下</span>
+              <p>限 40 人，需提前登记藏品类别，避免同一系列重复带盒。</p>
+            </div>
+          </li>
+          <li>
+            <span class="date">11 月 5 日</span>
+            <div class="li-body">
+              <b>树脂雕像底座编号对照表更新 18 条</b> <span class="chip">雕像</span>
+              <p>补入 2026 年 8 月两批次的工厂代号差异，涉及 3 个工作室。</p>
+            </div>
+          </li>
+          <li>
+            <span class="date">11 月 3 日</span>
+            <div class="li-body">
+              <b>「老银饰锈色对照」图集扩充</b> <span class="chip">杂项</span>
+              <p>新增 22 张实物微距，按银硫化程度分四级，附拍摄光源说明。</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 4 分类入口 -->
+      <section class="section" id="channel-index">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Channels</span>
+            <h2>分类入口</h2>
+          </div>
+          <span class="more" style="color:var(--muted);font-size:.82rem">12 个频道 · 按条目数排序</span>
+        </div>
+        <div class="channels">
+          <a href="/#deep"><span class="cn">隐藏款概率</span><span class="cnt">1,284 条</span></a>
+          <a href="/#guide"><span class="cn">手办涂装鉴别</span><span class="cnt">962 条</span></a>
+          <a href="/#featured"><span class="cn">盲盒端盒重量</span><span class="cnt">873 条</span></a>
+          <a href="/#updates"><span class="cn">雕像底座编号</span><span class="cnt">641 条</span></a>
+          <a href="/#timeline"><span class="cn">陶俑修复</span><span class="cnt">520 条</span></a>
+          <a href="/#news"><span class="cn">老银饰锈色</span><span class="cnt">497 条</span></a>
+          <a href="/#comments"><span class="cn">二手成交价</span><span class="cnt">455 条</span></a>
+          <a href="/#recommend"><span class="cn">设计师联名</span><span class="cnt">389 条</span></a>
+          <a href="/#faq"><span class="cn">防伪镭射标</span><span class="cnt">342 条</span></a>
+          <a href="/#overview"><span class="cn">拆盒工具</span><span class="cnt">318 条</span></a>
+          <a href="/#comments"><span class="cn">换藏局记录</span><span class="cnt">276 条</span></a>
+          <a href="/#news"><span class="cn">旧唱机维修</span><span class="cnt">203 条</span></a>
+        </div>
+      </section>
+
+      <!-- 5 深度解析 -->
+      <section class="section analysis" id="deep">
+        <span class="eyebrow">Deep Read</span>
+        <h2>深度解析：概率公示不是承诺书</h2>
+        <p style="font-size:.9rem;color:var(--muted)">判断有立场，也有可核对的部分。以下说法欢迎用社群记录反驳。</p>
+
+        <h3>先说结论：公示概率只对整箱成立</h3>
+        <p>厂商在盒背印的「隐藏款 1/144」，指的是整箱 144 盒中的期望比例，不对单盒承诺。2026 年 9 月，某系列在官网更新公示页时把「每箱 1 个」改成「平均 1/144」，措辞从确定性变成统计性，这个改动才是关键。社群 214 条记录里，中位拆盒数为 132 盒出 1 个，与 144 的偏差在抽样误差范围内；但有三条记录在 288 盒内出 0 个，也符合概率分布，不能据此说厂商造假。</p>
+
+        <h3>可核对的三个中段</h3>
+        <table class="check-table">
+          <caption>以 2026 年 9—10 月两个系列为例，数据来自厂商公示页与社群自填记录</caption>
+          <thead>
+            <tr><th>核对项</th><th>A 系列（回声）</th><th>B 系列（潮汐）</th></tr>
+          </thead>
+          <tbody>
+            <tr><th>公示写法</th><td class="ok">平均 1/144</td><td class="no">每箱 1 个</td></tr>
+            <tr><th>社群记录样本</th><td>214 条拆盒</td><td>96 条拆盒</td></tr>
+            <tr><th>实际中位数</th><td>132 盒 / 1 个</td><td>144 盒 / 0.9 个</td></tr>
+            <tr><th>整箱开盒比例</th><td>约 37%</td><td>约 61%</td></tr>
+          </tbody>
+        </table>
+        <p>B 系列中位数更接近整箱理论值，是因为记录者里整箱开盒的比例高，数据更整齐；A 系列散盒多，长尾更明显。两组数据不能直接横向比「谁更准」，只能各自对照自己的写法。</p>
+
+        <div class="quote-card">
+          <p>真正的风险不在概率本身，而在「按箱买就一定有」这句话被卖家当成销售话术。</p>
+          <cite>——来自 11 月 6 日换藏局现场的一段录音转写，说话者是做过 8 年盲盒采购的从业者</cite>
+        </div>
+
+        <h3>说法差异：厂商、卖家、玩家各说各的</h3>
+        <p>厂商公示页用的是「平均」，强调长期期望；二级市场卖家常用「稳出」「必中」，把统计概率包装成单盒承诺；普通玩家看到的则是自己那一次的结果。三者其实在讨论不同对象。把「平均 1/144」翻译成「买 144 盒一定出 1 个」是错误换算——按二项分布，买 144 盒里至少出 1 个的概率约 63.4%，仍有约三成六的概率一个都没有。</p>
+        <p>这一点有据可查：2026 年 10 月 18 日，某平台客服在回答「整箱是否保证隐藏款」时明确回复「无法保证」，截图在社群流传。这条回复与盒背「每箱 1 个」的旧版印刷存在措辞冲突，属于典型的规则前后不一致。</p>
+
+        <h3>推测部分：别把概率当投资依据</h3>
+        <p>有些人用隐藏款溢价反推购买量，逻辑上说得通，但样本极不稳定。9 月 A 系列隐藏款二手成交价从 680 元落到 430 元，跌幅 37%，同期拆盒记录却在增加——供给上来了，价格就下来。这只是事后描述，不能用来预测下一个系列。把它当成「买了必涨」的依据，是把统计描述当成了因果承诺。</p>
+      </section>
+
+      <!-- 6 体验指南 -->
+      <section class="section" id="guide">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Guide</span>
+            <h2>体验指南：第一次到场这样走</h2>
+          </div>
+        </div>
+        <ol class="steps">
+          <li>
+            <b>出发前查版本号</b>
+            <p>拍照记录藏品底部的批次码与生产周编号，存在手机相册并按日期命名，现场比对时不用翻聊天记录。</p>
+          </li>
+          <li>
+            <b>带上两件对照物</b>
+            <p>一件确定真品、一件有争议的。对照着看镭射标角度和印刷网点，比单看一件准确得多。</p>
+          </li>
+          <li>
+            <b>先问流通记录，再谈价格</b>
+            <p>问「这个批次最近三次成交价多少」，而不是「你这个值多少钱」。前者能得到具体数字，后者多半得到情绪。</p>
+          </li>
+          <li>
+            <b>当场验底座与接缝</b>
+            <p>树脂雕像看底座编号与雕刻师署名是否同一批；软胶玩具看分模线是否均匀，手工修模的接缝往往更细。</p>
+          </li>
+        </ol>
+        <div class="compare" style="margin-top:18px">
+          <div class="col-a">
+            <h4>适合带去的</h4>
+            <ul>
+              <li>确定的对照真品</li>
+              <li>放大镜（10 倍即可）</li>
+              <li>批次码照片</li>
+              <li>可现场查的成交记录截图</li>
+            </ul>
+          </div>
+          <div class="col-b">
+            <h4>容易踩坑的</h4>
+            <ul>
+              <li>只凭卖家描述下单</li>
+              <li>当场冲动加价抢热门款</li>
+              <li>忽略包装盒底部条码</li>
+              <li>把「限量」当成「稀缺」</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7 FAQ -->
+      <section class="section" id="faq">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">FAQ</span>
+            <h2>常见问题</h2>
+          </div>
+        </div>
+        <details class="faq">
+          <summary>盲盒隐藏款概率公示是法律承诺吗？</summary>
+          <div class="ans"><p>公示概率属于经营者信息披露，通常被理解为整批次的统计期望，不是对单盒的保证。遇到「必出」话术，可以要求对方出示公示页原文与批次说明。</p></div>
+        </details>
+        <details class="faq">
+          <summary>手办涂装鉴别该看哪几个位置？</summary>
+          <div class="ans"><p>先看眼睛高光是否对称，再看发梢分模线，最后看底座接缝。三处都干净，基本可以排除批量翻模；高光偏移 1 毫米以上、发梢有毛边的，多为二次涂装。</p></div>
+        </details>
+        <details class="faq">
+          <summary>二手成交价怎么查才准？</summary>
+          <div class="ans"><p>取同一批次、同一成色、近 30 天内的成交记录，至少三条，取中位数而不是最高价。只有挂价没有成交的，不能算行情。</p></div>
+        </details>
+        <details class="faq">
+          <summary>陶俑修复用可逆胶还是环氧胶？</summary>
+          <div class="ans"><p>陶俑这类器物优先可逆胶，便于日后再次处理；环氧胶粘接强度高但难拆，修复师一般只在结构急需支撑时局部使用。11 月 7 日那场直播里，修复师对一件灰陶俑的断裂面用了可逆胶点粘，四小时后才补强。</p></div>
+        </details>
+        <details class="faq">
+          <summary>设计师联名软胶怎么判断是不是官方批次？</summary>
+          <div class="ans"><p>查底座压印的工作室代码与发售批次是否对应，再对照包装内卡纸的印刷网点。2026 年 8 月两批联名的工厂代号不同，代码对不上就是另一条线。</p></div>
+        </details>
+        <details class="faq">
+          <summary>换藏局可以带多少件藏品？</summary>
+          <div class="ans"><p>杭州场限每人 6 件，需在登记时写明类别与批次，重复系列会被要求合并。超出数量的可现场寄存，不参与交换。</p></div>
+        </details>
+      </section>
+
+      <!-- 8 用户评论 -->
+      <section class="section" id="comments">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Comments</span>
+            <h2>藏友评论</h2>
+          </div>
+          <span class="more" style="color:var(--muted);font-size:.82rem">精选 6 条 · 保留原意</span>
+        </div>
+        <div class="comments">
+          <div class="comment">
+            <div class="who"><span class="avatar">阿</span><b>阿棠</b><time>11 月 7 日 21:14</time></div>
+            <p>概率表第 7 版我对着自己的拆盒记录核了一遍，SKULLPANDA 回声那组 168 盒出 1 个，比公示的 132 盒晚了不少。样本小不能说明什么，但至少证明散盒真的看运气。</p>
+          </div>
+          <div class="comment">
+            <div class="who"><span class="avatar">老</span><b>老周修陶</b><time>11 月 6 日 18:02</time></div>
+            <p>直播里那个可逆胶说得对。上个月收的一件灰陶俑，前手用环氧胶粘过断臂，拆的时候把胎土带下来一层，心疼到现在。<span class="ref">陶俑修复回放</span>那段值得反复看。</p>
+          </div>
+          <div class="comment">
+            <div class="who"><span class="avatar">K</span><b>Kori</b><time>11 月 5 日 10:37</time></div>
+            <p>底座编号对照表更新后，我那件雕像终于查到工厂代号了。不过说实话，表格里 2026 年 8 月两批次差别太小，照片上看不出来，得上手摸。</p>
+          </div>
+          <div class="comment">
+            <div class="who"><span class="avatar">小</span><b>小满</b><time>11 月 4 日 15:20</time></div>
+            <p>杭州换藏局限 40 人我觉得太少了，去年那场来了快 90 个，最后只能在门口换。场地小可以理解，但登记系统能不能先放号再审核？</p>
+          </div>
+          <div class="comment">
+            <div class="who"><span class="avatar">南</span><b>南屏晚钟</b><time>11 月 3 日 09:48</time></div>
+            <p>二手成交价那篇说得实在。我盯着一个限量软胶看了两周，挂价从 1200 降到 980 都没人接，所谓行情其实就是挂价自嗨。</p>
+          </div>
+          <div class="comment">
+            <div class="who"><span class="avatar">石</span><b>石桥</b><time>11 月 2 日 22:05</time></div>
+            <p>老银饰锈色分四级这个图集拍得清楚，光源说明也给了。就是希望补一组自然光下的对照，影棚灯下颜色偏暖，判断硫化程度容易误判。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9 相关资讯 -->
+      <section class="section" id="news">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">News</span>
+            <h2>相关资讯</h2>
+          </div>
+        </div>
+        <ul class="list">
+          <li>
+            <span class="date">11 月 7 日</span>
+            <div class="li-body">
+              <b>某平台调整盲盒类目售后规则，整箱商品拆封后不支持七天无理由</b>
+              <p>规则页 10 月 30 日更新，11 月 7 日生效。与单盒拆封规则不同，整箱被归入「影响二次销售」范畴。</p>
+            </div>
+          </li>
+          <li>
+            <span class="date">11 月 4 日</span>
+            <div class="li-body">
+              <b>沈阳换藏局新增器物杂项专区</b>
+              <p>首场定在 11 月 15 日，限 25 人，报名需提交一件藏品照片供初筛。</p>
+            </div>
+          </li>
+          <li>
+            <span class="date">11 月 1 日</span>
+            <div class="li-body">
+              <b>两家工作室发布 2027 年春季联名预告</b>
+              <p>仅公布雕刻师名单与发行量，未公布定价，底座编号规则沿用 2026 年方案。</p>
+            </div>
+          </li>
+          <li>
+            <span class="date">10 月 29 日</span>
+            <div class="li-body">
+              <b>旧唱机维修频道新增皮带规格对照</b>
+              <p>覆盖 1970—1990 年代 14 个常见型号，附测量方法与替换件来源说明。</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 10 相关推荐 -->
+      <section class="section" id="recommend">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Related</span>
+            <h2>相关推荐</h2>
+          </div>
+        </div>
+        <p style="font-size:.9rem;color:var(--muted)">按你刚才浏览的深度解析与体验指南匹配，标签可直接进入对应频道。</p>
+        <div class="tag-list">
+          <a class="tag gold" href="/#deep">隐藏款概率公示解读</a>
+          <a class="tag" href="/#guide">盲盒端盒重量比对</a>
+          <a class="tag" href="/#channel-index">手办涂装鉴别入门</a>
+          <a class="tag" href="/#updates">树脂雕像底座编号</a>
+          <a class="tag" href="/#faq">防伪镭射标角度判断</a>
+          <a class="tag" href="/#timeline">陶俑修复可逆胶</a>
+          <a class="tag gold" href="/#news">二手成交价中位数</a>
+          <a class="tag" href="/#comments">换藏局登记规则</a>
+          <a class="tag" href="/#featured">设计师联名工厂代号</a>
+        </div>
+      </section>
+
+      <!-- 11 时间线 -->
+      <section class="section" id="timeline">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Timeline</span>
+            <h2>本周更新记录</h2>
+          </div>
+        </div>
+        <ul class="timeline">
+          <li>
+            <time>2026-11-08</time>
+            <b>概率表第 7 版校对完成</b>
+            <p>补入两组系列数据，修正潮汐系列一处公示截图日期。</p>
+          </li>
+          <li>
+            <time>2026-11-07</time>
+            <b>陶俑修复直播回放上线</b>
+            <p>47 分钟，含可逆胶与环氧胶对比演示。</p>
+          </li>
+          <li>
+            <time>2026-11-06</time>
+            <b>杭州换藏局场地确定</b>
+            <p>上城区共享展厅，限 40 人，登记入口开放。</p>
+          </li>
+          <li>
+            <time>2026-11-05</time>
+            <b>雕像编号对照表增补 18 条</b>
+            <p>涉及 2026 年 8 月两批次、3 个工作室。</p>
+          </li>
+          <li>
+            <time>2026-11-03</time>
+            <b>老银饰锈色图集扩充 22 张</b>
+            <p>按硫化程度分四级，附光源与拍摄距离说明。</p>
+          </li>
+        </ul>
+      </section>
+
+    </main>
+
+    <!-- RIGHT SIDEBAR -->
+    <aside class="side-right">
+      <div class="aside-card">
+        <h3>本周热读榜</h3>
+        <ol class="rank">
+          <li><a href="/#deep">隐藏款概率公示解读</a><span class="n">2.1 万</span></li>
+          <li><a href="/#guide">新手换藏四步</a><span class="n">1.7 万</span></li>
+          <li><a href="/#faq">涂装鉴别看三处</a><span class="n">1.3 万</span></li>
+          <li><a href="/#timeline">陶俑修复胶水选择</a><span class="n">9,860</span></li>
+          <li><a href="/#news">成交价中位数怎么取</a><span class="n">7,420</span></li>
+          <li><a href="/#updates">底座编号对照更新</a><span class="n">6,115</span></li>
+        </ol>
+        <p class="mini-note">榜单按 11 月 1 日至 11 月 8 日阅读量统计，仅计完读记录。</p>
+      </div>
+      <div class="aside-card">
+        <h3>热门标签</h3>
+        <div class="aside-tags">
+          <a href="/#deep">隐藏款概率</a>
+          <a href="/#channel-index">端盒重量</a>
+          <a href="/#faq">镭射标</a>
+          <a href="/#timeline">可逆胶</a>
+          <a href="/#comments">换藏局</a>
+          <a href="/#news">成交中位数</a>
+          <a href="/#featured">联名批次</a>
+          <a href="/#guide">分模线</a>
+        </div>
+      </div>
+      <div class="aside-card">
+        <h3>线下换藏局</h3>
+        <ul class="list" style="margin:0">
+          <li style="padding:9px 0">
+            <div class="li-body">
+              <b>杭州 · 11 月 15 日</b>
+              <p>上城区共享展厅，限 40 人，已登记 27 人。</p>
+            </div>
+          </li>
+          <li style="padding:9px 0">
+            <div class="li-body">
+              <b>成都 · 11 月 16 日</b>
+              <p>青羊区茶空间，限 30 人，器物杂项为主。</p>
+            </div>
+          </li>
+          <li style="padding:9px 0;border-bottom:0">
+            <div class="li-body">
+              <b>沈阳 · 11 月 15 日</b>
+              <p>器物专区首场，需提交藏品照片初筛。</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer class="site-foot" id="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <svg width="34" height="34" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#5b2a5e"/>
+            <path d="M12 40l6-20 8 10 6-16 6 16 8-10 6 20z" fill="#f2b544"/>
+            <rect x="12" y="41" width="40" height="7" rx="3" fill="#c2402f"/>
+          </svg>
+          <span class="brand-text"><span class="brand-name">玩物社区女王</span><span class="brand-sub">Collector's Court</span></span>
+        </div>
+        <p class="foot-desc">把盲盒概率、手办工艺、器物真伪摊开对照的收藏交流场。所有条目都在讲具体的批次、编号、成交数字。</p>
+        <p class="foot-update">内容更新时间：<b>2026-11-08</b>，对应正文「最新更新」「本周更新记录」中的可核对条目。</p>
+      </div>
+      <div class="foot-col">
+        <h4>看内容</h4>
+        <ul>
+          <li><a href="/#overview">领域概览</a></li>
+          <li><a href="/#featured">精选内容推荐</a></li>
+          <li><a href="/#deep">隐藏款概率解析</a></li>
+          <li><a href="/#guide">新手体验指南</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>找频道</h4>
+        <ul>
+          <li><a href="/#channel-index">分类入口</a></li>
+          <li><a href="/#updates">最新更新</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+          <li><a href="/#timeline">更新记录</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>参与</h4>
+        <ul>
+          <li><a href="/#faq">常见问题</a></li>
+          <li><a href="/#comments">藏友评论</a></li>
+          <li><a href="/#recommend">相关推荐</a></li>
+          <li><a href="/#footer">联系与登记说明</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>页面所列藏品条目、成交数字、换藏局人数均为示例数据，用于说明判断方法，不构成投资或交易建议。图片来自 picsum.photos 占位图源。</span>
+      <span>© 2026 玩物社区女王 · 内容与栏目版权归发布者所有</span>
+    </div>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  var menuToggle=document.getElementById('menuToggle');
+  var mainNav=document.getElementById('mainNav');
+  if(menuToggle&&mainNav){
+    menuToggle.addEventListener('click',function(){
+      var open=mainNav.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded',open?'true':'false');
+    });
+    mainNav.addEventListener('click',function(e){
+      if(e.target.tagName==='A'&&window.innerWidth<=760){
+        mainNav.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  var toTop=document.getElementById('toTop');
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>420){toTop.classList.add('show');}else{toTop.classList.remove('show');}
+  },{passive:true});
+  toTop.addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+
+  var navLinks=Array.prototype.slice.call(document.querySelectorAll('#sideNav a'));
+  var sections=navLinks.map(function(a){
+    var id=a.getAttribute('href').replace('/#','');
+    return document.getElementById(id);
+  });
+  function highlight(){
+    var pos=window.scrollY+160;
+    var idx=-1;
+    sections.forEach(function(sec,i){
+      if(sec&&sec.offsetTop<=pos){idx=i;}
+    });
+    navLinks.forEach(function(a,i){a.classList.toggle('active',i===idx);});
+  }
+  window.addEventListener('scroll',highlight,{passive:true});
+  highlight();
+
+  var input=document.getElementById('searchInput');
+  var btn=document.getElementById('searchBtn');
+  var msg=document.getElementById('searchMsg');
+  var searchables=Array.prototype.slice.call(document.querySelectorAll('main h2, main h3, main .list b, main .channels .cn, main .tag, main .rank a, main .timeline b'));
+  function clearMarks(){
+    Array.prototype.forEach.call(document.querySelectorAll('mark'),function(m){
+      var p=m.parentNode;
+      p.replaceChild(document.createTextNode(m.textContent),m);
+      p.normalize();
+    });
+  }
+  function doSearch(){
+    var q=input.value.trim();
+    clearMarks();
+    msg.textContent='';
+    if(!q){return;}
+    var lower=q.toLowerCase();
+    var hits=[];
+    searchables.forEach(function(el){
+      if(el.textContent.toLowerCase().indexOf(lower)!==-1){hits.push(el);}
+    });
+    if(!hits.length){
+      msg.textContent='没有找到「'+q+'」，试试：隐藏款概率、端盒重量、可逆胶';
+      return;
+    }
+    var first=hits[0];
+    first.scrollIntoView({behavior:'smooth',block:'center'});
+    msg.textContent='找到 '+hits.length+' 处相关内容';
+  }
+  btn.addEventListener('click',doSearch);
+  input.addEventListener('keydown',function(e){
+    if(e.key==='Enter'){e.preventDefault();doSearch();}
+  });
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"玩物社区女王",
+  "description":"潮玩、盲盒、手办与古玩器物的收藏交流社区，提供版本鉴别、概率解读、流通行情与藏友互动。",
+  "inLanguage":"zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"盲盒隐藏款概率公示是法律承诺吗？","acceptedAnswer":{"@type":"Answer","text":"公示概率属于经营者信息披露，通常被理解为整批次的统计期望，不是对单盒的保证。遇到「必出」话术，可以要求对方出示公示页原文与批次说明。"}},
+    {"@type":"Question","name":"手办涂装鉴别该看哪几个位置？","acceptedAnswer":{"@type":"Answer","text":"先看眼睛高光是否对称，再看发梢分模线，最后看底座接缝。三处都干净，基本可以排除批量翻模。"}},
+    {"@type":"Question","name":"二手成交价怎么查才准？","acceptedAnswer":{"@type":"Answer","text":"取同一批次、同一成色、近 30 天内的成交记录，至少三条，取中位数而不是最高价。只有挂价没有成交的，不能算行情。"}},
+    {"@type":"Question","name":"陶俑修复用可逆胶还是环氧胶？","acceptedAnswer":{"@type":"Answer","text":"陶俑这类器物优先可逆胶，便于日后再次处理；环氧胶粘接强度高但难拆，修复师一般只在结构急需支撑时局部使用。"}},
+    {"@type":"Question","name":"设计师联名软胶怎么判断是不是官方批次？","acceptedAnswer":{"@type":"Answer","text":"查底座压印的工作室代码与发售批次是否对应，再对照包装内卡纸的印刷网点。"}},
+    {"@type":"Question","name":"换藏局可以带多少件藏品？","acceptedAnswer":{"@type":"Answer","text":"杭州场限每人 6 件，需在登记时写明类别与批次，重复系列会被要求合并。"}}
+  ]
+}
+</script>
+</body>
+                                                </html>
